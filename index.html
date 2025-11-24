@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina A&L MOTOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-area">
+        <img src="imagens/logo.png" alt="Logo Oficina" class="logo">
+        <h1>Oficina A&L MOTOS</h1>
+    </div>
+
+    <nav class="menu">
+    <ul>
+        <li class="item">
+            <a href="#inicio">
+                <img src="imagens/inicio.png" alt="Início">
+                <span>Início</span>
+            </a>
+        </li>
+
+        <li class="item active">
+            <a href="#sobre">
+                <img src="imagens/chave-de-fenda.png" alt="Sobre nós">
+                <span>Sobre nós</span>
+            </a>
+        </li>
+
+        <li class="item">
+            <a href="#localizacao">
+                <img src="imagens/pino-de-localizacao.png" alt="Localização">
+                <span>localização</span>
+            </a>
+        </li>
+
+        <li class="item">
+            <a href="#servicos">
+                <img src="imagens/caixa-de-ferramentas.png" alt="Serviços">
+                <span>Serviços</span>
+            </a>
+        </li>
+
+        <li class="item">
+            <a href="https://wa.me/5547996871406" target="_blank">
+                <img src="imagens/contato.png" alt="Contatos">
+                <span>Contatos</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+</header>
+
+<section class="banner">
+    <div class="banner-text">
+        <img src="imagens/baner.jpg" alt="">
+        <h2>Manutenção completa para sua moto</h2>
+        <p>Motor • Injeção • Suspensão • Elétrica • Revisão Geral</p>
+
+        <a href="https://wa.me/5547996871406" class="btn-wpp" target="_blank">
+            Fale no WhatsApp
+        </a>
+    </div>
+</section>
+
+
+
+<section id="servicos" class="servicos">
+    <h2>Nossos Serviços</h2>
+
+    <div class="grid">
+        <div class="card">
+            <img src="imagens/serviço 1.jpg" alt="">
+            <p>Revisão completa</p>
+        </div>
+        <div class="card">
+            <img src="imagens/serviço 2.jpg" alt="">
+            <p>Troca de óleo,
+                <br> Filtros e fluídos
+            </p>
+        </div>
+        <div class="card">
+            <img src="imagens/serviço 3.jpg" alt="">
+            <p>Motor parte interna e externa</p>
+        </div>
+        <div class="card">
+            <img src="imagens/serviço 4.jpg" alt="">
+            <p>Elétrica e freio</p>
+        </div>
+        <div class="card">
+            <img src="imagens/serviço 5.jpg" alt="">
+            <p>Suspensão</p>
+        </div>
+        <div class="card">
+            <img src="imagens/servoço 6.jpg" alt="">
+            <p>Injeção eletrônica</p>
+        </div>
+    </div>
+</section>
+
+<section id="orcamento" class="orcamento-section">
+    <h2>Solicitar Orçamento</h2>
+    <p>Preencha os dados abaixo e receba seu orçamento rapidamente pelo WhatsApp.</p>
+
+    <form action="https://wa.me/5547996871406" method="GET" target="_blank" onsubmit="return montarMensagem()">
+
+        <div class="form-group">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="moto">Modelo da moto:</label>
+            <input type="text" id="moto" required>
+        </div>
+
+        <div class="form-group">
+            <label for="servico">Serviço desejado:</label>
+            <select id="servico" required>
+                <option value="">Selecione...</option>
+                <option>Troca de óleo</option>
+                <option>Revisão completa</option>
+                <option>Freio</option>
+                <option>Suspensão</option>
+                <option>Elétrica</option>
+                <option>Diagnóstico geral</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição do problema (opcional):</label>
+            <textarea id="descricao" rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="btn-whatsapp">Enviar pedido</button>
+    </form>
+</section>
+
+<section class="local" href="#localizacao">
+    <img src="imagens/pino-de-localizacao.png" alt="">
+    
+    <h2>Nossa localização</h2>
+    <p>Rua Gustavo Streit- 563
+        <br> Bairro Rancho Bom 
+       
+    </p>
+</section>
+
+
+<section id="sobre" class="sobre">
+    <h2>Sobre a Oficina</h2>
+    <p>
+        Especialistas em motos Honda, Yamaha e esportivas.  
+        Garantimos serviço rápido, confiável e com preço justo.
+        Experiência em motores preparados, elétrica, injeção e manutenção completa.
+    </p>
+</section>
+
+
+
+<footer>
+    <p>© 2025 Oficina A&L — Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function montarMensagem() {
+    const nome = document.getElementById("nome").value;
+    const moto = document.getElementById("moto").value;
+    const servico = document.getElementById("servico").value;
+    const descricao = document.getElementById("descricao").value;
+
+    const texto = 
+`Olá! Quero pedir um orçamento.
+Nome: ${nome}
+Moto: ${moto}
+Serviço: ${servico}
+Descrição: ${descricao}`;
+
+    const url = "https://wa.me/5547996871406?text=" + encodeURIComponent(texto);
+    window.open(url, "_blank");
+
+    return false;
+}
+</script>
+
+
+</body>
+</html>
